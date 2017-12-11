@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Главная</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+      Привет, {{ user.username }}!
+      {{ user.password }}
+
+    <br>
+    <br>
+    <br>vvvvvvvvvvvvvvvvvvv alalalal
+      <br>
+      <a href="/logout">Выход</a>
+    {% else %}
+    Главная страница для неавторизованных
+    <br>
+      <a href="/login">Вход</a>
+      <br>
+      <a href="/register">Регистрация</a>
+    {% endif %}
+  </body>
+</html>

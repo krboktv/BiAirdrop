@@ -1,0 +1,2 @@
+token_owner_private_key 7XSgNdnwNF6mcQxPLggFsgxWvJCVG2pige2i8qhWxpfv
+tocken_asset_id 32kTPfXsUSWwjquT4NcXa52sLt9wWNngzY9SVvQbowH1

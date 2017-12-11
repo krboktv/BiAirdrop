@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Личный кабинет</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- Добавляю API, чтобы привязать кошелёк Waves -->
+    <script src="..\node_modules\waves-api\dist\waves-api.min.js"></script>
+    <script src="..\node_modules\crypto-js\crypto-js.js"></script>
+    <script src="..\bower_components\kjur-jsrsasign\jsrsasign-all-min.js"></script> 
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand form-inline">
+                    <img style="width: 40px; height: 40px; margin-left: 20px;" src="pic/logo_ft.png">
+                    <a href="main.html">
+                        Личный кабинет
+                    </a>
+                </li>
+                <li>
+                    <a href="account.html">Аккаунты</a>
+                </li>
+                <li>
+                    <a href="transaction.html">Транзакции</a>
+                </li>
+                <li>
+                    <a href="#">Статистика</a>
+                </li>
+             
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <nav style="margin-bottom: 20px" class="navbar navbar-inverse bg-faded">
+                    <form class="form-inline">
+                        <button href="#menu-toggle" class="btn btn-primary" id="menu-toggle">
+                            =
+                        </button>
+                    </form>
+                </nav>
+                <div class="text-center col">
+                    <form class="form-inline">
+                        <div class="col-auto">
+                            <label class="mr-sm-3" for="inlineFormCustomSelectPref">Добавить кошелёк</label>
+                        </div>
+                        <div class="col-auto">
+                                <select style="margin-left: 5px; " onclick="changeCur()" class="custom-select mb-2 mr-sm-2 mb-sm-0" name="changeCurrence" id="inlineFormCustomSelectPref">
+                                    <option value="0">Bitcoin</option>
+                                    <option value="1">Bitcoin-gold</option>
+                                    <option value="2">Waves</option>
+                                    <option value="3">Ethereum</option>
+                                </select>
+                                <span class="addButt"><button class="btn btn-primary delButton" type="button" data-toggle="collapse" data-target="#newAccountInfo" aria-expanded="true">+</button></span>
+                                <span class="addAcc"><span></span></span>
+                        </div>
+                </div>
+                </form>
+            </div>
+            <div class="row" style="margin-left:14px;">
+                <script type="text/javascript" src="js/js.js"></script>
+                <div style="margin-top: 15px;" class="col-auto"><div class="collapse multi-collapse" id="newAccountInfo"><div class="card card-body"><div class="row"><div class="input-group"><span class="input-group-addon hhh">Private key</span><input type="text" class="form-control" name="privateKey" id="basic-url" aria-describedby="basic-addon3"></div><div class="input-group" style="margin-top: 15px"><span class="input-group-addon btn btn-primary hhh">Public key</span><input type="text" class="form-control" name="publicKey" id="basic-url" aria-describedby="basic-addon3"></div><div style="margin-top: 15px" class="input-group"><span class="input-group-addon hhh">Ваша строка</span><input readonly type="text" class="form-control" id="basic-url" name="serverString" aria-describedby="basic-addon3" value="akjfbjlwehbchjslhjdbclsjhdbcjshbzdljchblzsdjhvblzsjhdbvljzshvblbsdhjvb"></div><div style="margin-top: 15px" class="input-group"><span class="input-group-addon">Строка подтверждения</span><input type="text" class="form-control" id="basic-url" name="endKey" aria-describedby="basic-addon3"></div><div style="margin-top: 10px;" class="col-12 text-center"><div class="btn-group"><button data-toggle="collapse" type="submit" onclick="Encription()" class="btn btn-primary">Подтвердить</button><button data-toggle="collapse" aria-controls="multiCollapseExample1" type="submit" data-target="#newAccountInfo" style="margin-left: 5px;" class="btn btn-primary ggg">Закрыть</button></div></div></div></div></div></div>
+            </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/addWavesWallet.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+</body>
+
+</html>
